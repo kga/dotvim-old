@@ -65,6 +65,7 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+vnoremap <silent> <Space>a :Align =><CR>
 nnoremap <silent> <Space>/ :nohlsearch<CR>
 
 nnoremap ,e :call ShebangExecute()<CR>
