@@ -2,6 +2,8 @@ scriptencoding utf-8
 syntax enable
 set nocompatible
 
+call pathogen#runtime_append_all_bundles()
+
 colorscheme xoria256
 
 set nobackup
