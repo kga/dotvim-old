@@ -7,3 +7,6 @@
 [submodule "bundle/perldoc-vim"]
 	path = bundle/perldoc-vim
 	url = git://github.com/hotchpotch/perldoc-vim.git
+[submodule "bundle/hatena-vim"]
+	path = bundle/hatena-vim
+	url = git://github.com/motemen/hatena-vim.git
