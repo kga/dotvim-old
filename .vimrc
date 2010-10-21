@@ -4,6 +4,8 @@ set nocompatible
 
 call pathogen#runtime_append_all_bundles()
 
+filetype plugin indent on
+
 colorscheme xoria256
 
 set nobackup
@@ -74,3 +76,15 @@ function! ShebangExecute()
         execute '!' &ft ' %'
     endif
 endfunction
+
+
+" FuzzyFinder
+let g:fuf_modesDisable = []
+let g:fuf_ignoreCase = 1
+let g:fuf_enumeratingLimit = 30
+let g:fuf_mrufile_maxItem = 5000
+let g:fuf_keyPreview = '<C-]>'
+nnoremap <silent> fb :FufBuffer<CR>
+nnoremap <silent> fm :FufMruFile<CR>
+nnoremap <silent> ff :FufFile<CR>
+nnoremap <silent> fF :FufFile <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
