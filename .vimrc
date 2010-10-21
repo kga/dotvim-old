@@ -67,6 +67,14 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+nnoremap <silent> eu :setlocal fileencoding=utf-8<CR>
+nnoremap <silent> es :setlocal fileencoding=cp932<CR>
+nnoremap <silent> ee :setlocal fileencoding=euc-jp<CR>
+
+nnoremap <silent> eru :e ++enc=utf-8 %<CR>
+nnoremap <silent> ere :e ++enc=euc-jp %<CR>
+nnoremap <silent> ers :e ++enc=cp932 %<CR>
+
 vnoremap <silent> <Space>a :Align =><CR>
 nnoremap <silent> <Space>/ :nohlsearch<CR>
 
