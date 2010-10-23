@@ -1,4 +1,7 @@
 scriptencoding utf-8
+
+language messages C
+
 syntax enable
 set nocompatible
 
@@ -9,7 +12,6 @@ filetype plugin indent on
 colorscheme xoria256
 
 set nobackup
-set foldmethod=marker
 set textwidth=0
 set ruler
 set viminfo='100,<10000,s1000,\"1000
@@ -17,6 +19,9 @@ set backspace=indent,eol,start
 set list
 set listchars=tab:>\ ,trail:-
 set scrolloff=10
+set display=lastline
+set foldenable
+set foldmethod=marker
 
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
@@ -36,16 +41,17 @@ set wrapscan
 set noincsearch
 set showcmd
 set showmatch
+set matchpairs+=<:>
 set hlsearch
 set laststatus=2
 set ambiwidth=double
 set hidden
-set autoread
+"set autoread
 
 let &statusline = ''
-let &statusline .= '%<[%n]%y %F %h%m%r%w'
+let &statusline .= '%<[%n]%y%h%m%r%w %F'
 let &statusline .= '%='
-let &statusline .= '[%{&l:fileencoding == "" ? &encoding : &l:fileencoding}:%{&fileformat}]'
+let &statusline .= ' [%{&l:fileencoding == "" ? &encoding : &l:fileencoding}:%{&fileformat}]'
 let &statusline .= ' %10.(%l,%c%V%) %P'
 
 set termencoding=utf-8
