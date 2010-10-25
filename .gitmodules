@@ -10,3 +10,6 @@
 [submodule "bundle/hatena-vim"]
 	path = bundle/hatena-vim
 	url = git://github.com/motemen/hatena-vim.git
+[submodule "bundle/neocomplcache"]
+	path = bundle/neocomplcache
+	url = git://github.com/Shougo/neocomplcache.git
