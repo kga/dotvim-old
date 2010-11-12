@@ -22,6 +22,7 @@ set scrolloff=10
 set display=lastline
 set foldenable
 set foldmethod=marker
+set clipboard+=unnamed
 
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
@@ -95,18 +96,6 @@ function! ShebangExecute()
 endfunction
 
 
-" {{{ FuzzyFinder
-"let g:fuf_modesDisable = []
-"let g:fuf_ignoreCase = 1
-"let g:fuf_enumeratingLimit = 30
-"let g:fuf_mrufile_maxItem = 5000
-"let g:fuf_keyPreview = '<C-]>'
-"nnoremap <silent> fb :FufBuffer<CR>
-"nnoremap <silent> fm :FufMruFile<CR>
-"nnoremap <silent> ff :FufFile<CR>
-"nnoremap <silent> fF :FufFile <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
-" }}}
-
 " {{{ neocomplcache
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -120,15 +109,12 @@ let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 " Set minimum syntax keyword length.
 let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
 let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-    
+    \ 'default' : ''
+\ }
+
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
     let g:neocomplcache_keyword_patterns = {}
@@ -180,7 +166,6 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 " }}}
-
 
 " {{{ unite.vim
 " The prefix key.
