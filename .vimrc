@@ -96,15 +96,15 @@ endfunction
 
 
 " {{{ FuzzyFinder
-let g:fuf_modesDisable = []
-let g:fuf_ignoreCase = 1
-let g:fuf_enumeratingLimit = 30
-let g:fuf_mrufile_maxItem = 5000
-let g:fuf_keyPreview = '<C-]>'
-nnoremap <silent> fb :FufBuffer<CR>
-nnoremap <silent> fm :FufMruFile<CR>
-nnoremap <silent> ff :FufFile<CR>
-nnoremap <silent> fF :FufFile <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
+"let g:fuf_modesDisable = []
+"let g:fuf_ignoreCase = 1
+"let g:fuf_enumeratingLimit = 30
+"let g:fuf_mrufile_maxItem = 5000
+"let g:fuf_keyPreview = '<C-]>'
+"nnoremap <silent> fb :FufBuffer<CR>
+"nnoremap <silent> fm :FufMruFile<CR>
+"nnoremap <silent> ff :FufFile<CR>
+"nnoremap <silent> fF :FufFile <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
 " }}}
 
 " {{{ neocomplcache
@@ -179,4 +179,32 @@ endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+" }}}
+
+
+" {{{ unite.vim
+" The prefix key.
+nnoremap [unite] <Nop>
+nmap     f       [unite]
+
+nnoremap [unite]u  :<C-u>Unite<Space>
+nnoremap <silent> [unite]f :<C-u>UniteWithCurrentDir -buffer-name=files file buffer file_mru bookmark<CR>
+nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=files buffer buffer_tab<CR>
+nnoremap <silent> [unite]m :<C-u>Unite -buffer-name=files file_mru<CR>
+
+autocmd FileType unite call s:unite_my_settings()
+function! s:unite_my_settings()"{{{
+  " Overwrite settings.
+
+  nmap <buffer> <ESC> <Plug>(unite_exit)
+  imap <buffer> jj    <Plug>(unite_insert_leave)
+  "imap <buffer> <C-w> <Plug>(unite_delete_backward_path)
+
+  " Start insert.
+  "let g:unite_enable_start_insert = 1
+endfunction"}}}
+
+let g:unite_enable_start_insert = 1
+let g:unite_update_time = 80
+let g:unite_source_file_mru_limit = 5000
 " }}}
