@@ -172,9 +172,9 @@ let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 nnoremap [unite] <Nop>
 nmap     f       [unite]
 
-nnoremap [unite]u  :<C-u>Unite<Space>
+nnoremap          [unite]u :<C-u>Unite<Space>
 nnoremap <silent> [unite]f :<C-u>UniteWithCurrentDir -buffer-name=files file buffer file_mru bookmark<CR>
-nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=files buffer buffer_tab<CR>
+nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=files buffer_tab<CR>
 nnoremap <silent> [unite]m :<C-u>Unite -buffer-name=files file_mru<CR>
 
 autocmd FileType unite call s:unite_my_settings()
