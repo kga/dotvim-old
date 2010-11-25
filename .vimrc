@@ -95,6 +95,8 @@ function! ShebangExecute()
     endif
 endfunction
 
+autocmd! BufNewFile,BufRead *.psgi setfiletype perl
+
 
 " {{{ neocomplcache
 " Disable AutoComplPop.
