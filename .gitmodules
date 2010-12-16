@@ -16,3 +16,6 @@
 [submodule "bundle/unite.vim"]
 	path = bundle/unite.vim
 	url = git://github.com/Shougo/unite.vim.git
+[submodule "bundle/vim-pathogen"]
+	path = bundle/vim-pathogen
+	url = git://github.com/tpope/vim-pathogen.git
