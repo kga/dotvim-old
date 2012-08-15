@@ -1,2 +1,2 @@
-nnoremap K :Perldoc<CR>
+"nnoremap K :Perldoc<CR>
 setlocal iskeyword+=:

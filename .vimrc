@@ -176,6 +176,7 @@ nnoremap          [unite]u :<C-u>Unite<Space>
 nnoremap <silent> [unite]f :<C-u>UniteWithCurrentDir -buffer-name=files file buffer file_mru bookmark<CR>
 nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=files buffer_tab<CR>
 nnoremap <silent> [unite]m :<C-u>Unite -buffer-name=files file_mru<CR>
+nnoremap <silent> [unite]p :<C-u>Unite ref/perldoc<CR>
 
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()"{{{
