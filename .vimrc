@@ -12,6 +12,7 @@ filetype plugin indent on
 colorscheme xoria256
 
 set nobackup
+set directory=~/swp
 set textwidth=0
 set ruler
 set viminfo='100,<10000,s1000,\"1000
