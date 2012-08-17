@@ -96,6 +96,7 @@ function! ShebangExecute()
     endif
 endfunction
 
+let g:ref_perldoc_complete_head = 1
 
 " {{{ neocomplcache
 " Disable AutoComplPop.
