@@ -23,7 +23,7 @@ set scrolloff=10
 set display=lastline
 set foldenable
 set foldmethod=marker
-set clipboard+=unnamed
+"set clipboard+=unnamed
 
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
