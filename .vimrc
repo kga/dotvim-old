@@ -50,6 +50,8 @@ set ambiwidth=double
 set hidden
 "set autoread
 
+let loaded_matchparen = 1
+
 let &statusline = ''
 let &statusline .= '%<[%n]%y%h%m%r%w %F'
 let &statusline .= '%='
