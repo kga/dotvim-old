@@ -1,13 +1,27 @@
-scriptencoding utf-8
-
-language messages C
-
-syntax enable
 set nocompatible
+filetype off
 
-call pathogen#runtime_append_all_bundles()
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'vim-perl/vim-perl'
+
+NeoBundle 'Lokaltog/vim-powerline'
+
+NeoBundle 'Align'
 
 filetype plugin indent on
+filetype indent on
+syntax on
 
 colorscheme xoria256
 
@@ -34,6 +48,7 @@ set softtabstop=4
 set shiftwidth=4
 
 set wildmode=list:longest,full
+set wildmenu
 set modelines=0
 set autoindent
 
@@ -49,14 +64,15 @@ set laststatus=2
 set ambiwidth=double
 set hidden
 "set autoread
+"set whichwrap=b,s,h,l,<,>,[,]
 
 let loaded_matchparen = 1
 
-let &statusline = ''
-let &statusline .= '%<[%n]%y%h%m%r%w %F'
-let &statusline .= '%='
-let &statusline .= ' [%{&l:fileencoding == "" ? &encoding : &l:fileencoding}:%{&fileformat}]'
-let &statusline .= ' %10.(%l,%c%V%) %P'
+"let &statusline = ''
+"let &statusline .= '%<[%n]%y%h%m%r%w %F'
+"let &statusline .= '%='
+"let &statusline .= ' [%{&l:fileencoding == "" ? &encoding : &l:fileencoding}:%{&fileformat}]'
+"let &statusline .= ' %10.(%l,%c%V%) %P'
 
 set termencoding=utf-8
 set encoding=utf-8
