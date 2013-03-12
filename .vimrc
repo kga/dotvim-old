@@ -38,6 +38,8 @@ set display=lastline
 set foldenable
 set foldmethod=marker
 "set clipboard+=unnamed
+set visualbell
+set t_vb=
 
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
