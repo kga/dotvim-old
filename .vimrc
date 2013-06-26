@@ -15,6 +15,8 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'vim-perl/vim-perl'
 
+NeoBundle 'tpope/vim-fugitive'
+
 NeoBundle 'Lokaltog/vim-powerline'
 
 NeoBundle 'Align'
