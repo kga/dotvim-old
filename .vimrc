@@ -20,6 +20,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Lokaltog/vim-powerline'
 
 NeoBundle 'Align'
+NeoBundle 'sudo.vim'
 
 filetype plugin indent on
 filetype indent on
