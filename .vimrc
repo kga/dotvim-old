@@ -17,7 +17,7 @@ NeoBundle 'vim-perl/vim-perl'
 
 NeoBundle 'tpope/vim-fugitive'
 
-NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'itchyny/lightline.vim'
 
 NeoBundle 'Align'
 NeoBundle 'sudo.vim'
