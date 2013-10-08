@@ -109,17 +109,9 @@ nnoremap <silent> ers :e ++enc=cp932 %<CR>
 vnoremap <silent> <Space>a :Align =><CR>
 nnoremap <silent> <Space>/ :nohlsearch<CR>
 
-nnoremap ,e :call ShebangExecute()<CR>
-function! ShebangExecute()
-    let m = matchlist(getline(1), '#!\(.*\)')
-    if(len(m) > 2)
-        execute '!'. m[1] . ' %'
-    else
-        execute '!' &ft ' %'
-    endif
-endfunction
-
 let g:ref_perldoc_complete_head = 1
+
+nnoremap <silent> ,r :<C-u>QuickRun<CR>
 
 " {{{ neocomplcache
 " Disable AutoComplPop.
