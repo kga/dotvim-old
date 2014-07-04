@@ -10,17 +10,29 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/vimproc.vim', {
+      \ 'build' : {
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'vim-perl/vim-perl'
+NeoBundle 'motemen/xslate-vim'
+NeoBundle 'groenewege/vim-less'
+NeoBundle 'gcmt/wildfire.vim'
 
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-surround'
 
 NeoBundle 'Lokaltog/vim-powerline'
 
 NeoBundle 'Align'
 NeoBundle 'sudo.vim'
+NeoBundle 'sorah/unite-ghq'
 
 filetype plugin indent on
 filetype indent on
@@ -109,9 +121,13 @@ nnoremap <silent> ers :e ++enc=cp932 %<CR>
 vnoremap <silent> <Space>a :Align =><CR>
 nnoremap <silent> <Space>/ :nohlsearch<CR>
 
+nnoremap <expr> 0 col('.') == 1 ? '^' : '0'
+
 let g:ref_perldoc_complete_head = 1
 
 nnoremap <silent> ,r :<C-u>QuickRun<CR>
+let g:quickrun_config = {}
+let g:quickrun_config.perl = { 'command': 'perl', 'cmdopt': '-MProject::Libs' }
 
 " {{{ neocomplcache
 " Disable AutoComplPop.
@@ -175,6 +191,12 @@ endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+
+" http://hakobe932.hatenablog.com/entry/2014/01/21/214100
+if !exists('g:neocomplcache_delimiter_patterns')
+    let g:neocomplcache_delimiter_patterns = {}
+endif
+let g:neocomplcache_delimiter_patterns['perl'] = []
 " }}}
 
 " {{{ unite.vim
@@ -187,6 +209,7 @@ nnoremap <silent> [unite]f :<C-u>UniteWithCurrentDir -buffer-name=files file fil
 nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=files buffer_tab<CR>
 nnoremap <silent> [unite]m :<C-u>Unite -buffer-name=files file_mru<CR>
 nnoremap <silent> [unite]p :<C-u>Unite ref/perldoc<CR>
+nnoremap <silent> [unite]e :<C-u>call DispatchUniteFileRecAsyncOrGit()<CR>
 
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()"{{{
@@ -200,7 +223,19 @@ function! s:unite_my_settings()"{{{
   "let g:unite_enable_start_insert = 1
 endfunction"}}}
 
+function! DispatchUniteFileRecAsyncOrGit()"{{{
+  if isdirectory(getcwd()."/.git")
+    Unite file_rec/git:!
+  else
+    Unite file_rec/async:!
+  endif
+endfunction"}}}
+
 let g:unite_enable_start_insert = 1
 let g:unite_update_time = 80
 let g:unite_source_file_mru_limit = 5000
+
+call unite#custom#source('file_rec/async', 'ignore_pattern', '\(png\|gif\|jpeg\|jpg\)$')
 " }}}
+
+let g:wildfire_fuel_map = "<ENTER>"
