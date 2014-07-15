@@ -210,6 +210,7 @@ nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=files buffer_tab<CR>
 nnoremap <silent> [unite]m :<C-u>Unite -buffer-name=files file_mru<CR>
 nnoremap <silent> [unite]p :<C-u>Unite ref/perldoc<CR>
 nnoremap <silent> [unite]e :<C-u>call DispatchUniteFileRecAsyncOrGit()<CR>
+nnoremap <silent> [unite]g :<C-u>Unite ghq<CR>
 
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()"{{{
