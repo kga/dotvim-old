@@ -5,13 +5,9 @@ neomru.vim
 sudo.vim
 unite-ghq
 unite.vim
-vim-fugitive
 vim-less
 vim-perl
-vim-powerline
 vim-quickrun
 vim-ref
-vim-surround
 vimproc.vim
-wildfire.vim
 xslate-vim

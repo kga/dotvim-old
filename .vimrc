@@ -23,12 +23,6 @@ NeoBundle 'thinca/vim-ref'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'motemen/xslate-vim'
 NeoBundle 'groenewege/vim-less'
-NeoBundle 'gcmt/wildfire.vim'
-
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-surround'
-
-NeoBundle 'Lokaltog/vim-powerline'
 
 NeoBundle 'Align'
 NeoBundle 'sudo.vim'
@@ -85,11 +79,11 @@ set hidden
 
 let loaded_matchparen = 1
 
-"let &statusline = ''
-"let &statusline .= '%<[%n]%y%h%m%r%w %F'
-"let &statusline .= '%='
-"let &statusline .= ' [%{&l:fileencoding == "" ? &encoding : &l:fileencoding}:%{&fileformat}]'
-"let &statusline .= ' %10.(%l,%c%V%) %P'
+let &statusline = ''
+let &statusline .= '%<[%n]%y%h%m%r%w %F'
+let &statusline .= '%='
+let &statusline .= ' [%{&l:fileencoding == "" ? &encoding : &l:fileencoding}:%{&fileformat}]'
+let &statusline .= ' %10.(%l,%c%V%) %P'
 
 set termencoding=utf-8
 set encoding=utf-8
