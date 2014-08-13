@@ -119,9 +119,16 @@ nnoremap <expr> 0 col('.') == 1 ? '^' : '0'
 
 let g:ref_perldoc_complete_head = 1
 
-nnoremap <silent> ,r :<C-u>QuickRun<CR>
+nnoremap <silent> ,r :<C-u>QuickRun -runner vimproc<CR>
 let g:quickrun_config = {}
-let g:quickrun_config.perl = { 'command': 'perl', 'cmdopt': '-MProject::Libs' }
+"let g:quickrun_config.perl = { 'command': 'perl', 'cmdopt': '-MProject::Libs' }
+
+let g:quickrun_config.perl = {
+\   'cmdopt': '-Ilib -It -MProject::Libs',
+\   'hook/cd/directory': '%{fnamemodify(finddir(".cpanfile", ".;"), ":h")}',
+\   'exec': 'carton exec perl %o %s:p %a',
+\}
+
 
 " {{{ neocomplcache
 " Disable AutoComplPop.
@@ -230,7 +237,7 @@ let g:unite_enable_start_insert = 1
 let g:unite_update_time = 80
 let g:unite_source_file_mru_limit = 5000
 
-call unite#custom#source('file_rec/async', 'ignore_pattern', '\(png\|gif\|jpeg\|jpg\)$')
+call unite#custom#source('file_rec/async', 'ignore_pattern', '\%(png\|gif\|jpeg\|jpg\)$')
 " }}}
 
 let g:wildfire_fuel_map = "<ENTER>"
