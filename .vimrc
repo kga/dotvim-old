@@ -27,6 +27,13 @@ NeoBundle 'groenewege/vim-less'
 NeoBundle 'Align'
 NeoBundle 'sudo.vim'
 NeoBundle 'sorah/unite-ghq'
+NeoBundle 'tpope/vim-fugitive'
+
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'Shutnik/jshint2.vim'
+let jshint2_save = 1
+
+autocmd QuickFixCmdPost *grep* cwindow
 
 filetype plugin indent on
 filetype indent on
@@ -89,7 +96,7 @@ set termencoding=utf-8
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,cp932,utf-16,utf-16le
 
-autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+"autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | silent! exe '!echo -n "kv:%\\"' | endif
 
 cnoremap <C-a> <Home>
