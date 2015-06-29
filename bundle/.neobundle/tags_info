@@ -1,14 +1,16 @@
 Align
-jshint.vim
 jshint2.vim
 neobundle.vim
 neocomplcache
 neomru.vim
 sudo.vim
+typescript-vim
 unite-ghq
 unite.vim
 vim-coffee-script
 vim-fugitive
+vim-go
+vim-jsx
 vim-less
 vim-perl
 vim-quickrun
