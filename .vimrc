@@ -1,13 +1,25 @@
-set nocompatible
-filetype off
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
 
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
 
+" Let NeoBundle manage NeoBundle
+" Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+" Refer to |:NeoBundle-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
@@ -31,6 +43,20 @@ NeoBundle 'tpope/vim-fugitive'
 
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'Shutnik/jshint2.vim'
+
+NeoBundle 'fatih/vim-go'
+NeoBundle 'mxw/vim-jsx'
+NeoBundle 'leafgarland/typescript-vim'
+
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
 let jshint2_save = 1
 
 autocmd QuickFixCmdPost *grep* cwindow
@@ -39,7 +65,8 @@ filetype plugin indent on
 filetype indent on
 syntax on
 
-colorscheme xoria256
+NeoBundle 'tomasr/molokai'
+colorscheme molokai
 
 set nobackup
 set directory=~/swp
@@ -213,9 +240,9 @@ nnoremap [unite] <Nop>
 nmap     f       [unite]
 
 nnoremap          [unite]u :<C-u>Unite<Space>
-nnoremap <silent> [unite]f :<C-u>UniteWithCurrentDir -buffer-name=files file file/new buffer file_mru bookmark<CR>
-nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=files buffer_tab<CR>
-nnoremap <silent> [unite]m :<C-u>Unite -buffer-name=files file_mru<CR>
+nnoremap <silent> [unite]f :<C-u>UniteWithCurrentDir file file/new buffer file_mru bookmark<CR>
+nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
+nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
 nnoremap <silent> [unite]p :<C-u>Unite ref/perldoc<CR>
 nnoremap <silent> [unite]e :<C-u>call DispatchUniteFileRecAsyncOrGit()<CR>
 nnoremap <silent> [unite]g :<C-u>Unite ghq<CR>
