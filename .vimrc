@@ -47,6 +47,7 @@ NeoBundle 'Shutnik/jshint2.vim'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'derekwyatt/vim-scala'
 
 call neobundle#end()
 
@@ -83,6 +84,8 @@ set foldmethod=marker
 "set clipboard+=unnamed
 set visualbell
 set t_vb=
+
+set number
 
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 

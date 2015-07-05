@@ -15,5 +15,6 @@ vim-less
 vim-perl
 vim-quickrun
 vim-ref
+vim-scala
 vimproc.vim
 xslate-vim

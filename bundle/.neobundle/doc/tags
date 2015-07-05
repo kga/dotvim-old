@@ -24,6 +24,8 @@
 'g:go_play_open_browser'	vim-go.txt	/*'g:go_play_open_browser'*
 'g:go_snippet_engine'	vim-go.txt	/*'g:go_snippet_engine'*
 'g:go_textobj_enabled'	vim-go.txt	/*'g:go_textobj_enabled'*
+'g:scala_use_builtin_tagbar_defs'	scala.txt	/*'g:scala_use_builtin_tagbar_defs'*
+'g:scala_use_default_keymappings'	scala.txt	/*'g:scala_use_default_keymappings'*
 (go-build)	vim-go.txt	/*(go-build)*
 (go-callees)	vim-go.txt	/*(go-callees)*
 (go-callers)	vim-go.txt	/*(go-callers)*
@@ -138,6 +140,7 @@
 :Ref	ref.txt	/*:Ref*
 :Ref-option	ref.txt	/*:Ref-option*
 :RefHistory	ref.txt	/*:RefHistory*
+:SortScalaImports	scala.txt	/*:SortScalaImports*
 :Unite	unite.txt	/*:Unite*
 :UniteBookmarkAdd	unite.txt	/*:UniteBookmarkAdd*
 :UniteClose	unite.txt	/*:UniteClose*
@@ -969,6 +972,15 @@ ref-sources	ref.txt	/*ref-sources*
 ref-viewer	ref.txt	/*ref-viewer*
 ref.txt	ref.txt	/*ref.txt*
 ref.vim	ref.txt	/*ref.vim*
+scala	scala.txt	/*scala*
+scala-commands	scala.txt	/*scala-commands*
+scala-credits	scala.txt	/*scala-credits*
+scala-leader-fr	scala.txt	/*scala-leader-fr*
+scala-leader-fs	scala.txt	/*scala-leader-fs*
+scala-leader-ft	scala.txt	/*scala-leader-ft*
+scala-mappings	scala.txt	/*scala-mappings*
+scala-options	scala.txt	/*scala-options*
+scala.txt	scala.txt	/*scala.txt*
 syntax_complete	neocomplcache.txt	/*syntax_complete*
 tags_complete	neocomplcache.txt	/*tags_complete*
 unite	unite.txt	/*unite*
