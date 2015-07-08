@@ -1,1 +1,6 @@
+*.sw[op]
+*.un~
+Session.vim
 .netrwhist
+*~
+
