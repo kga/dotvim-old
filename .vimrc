@@ -70,7 +70,7 @@ NeoBundle 'tomasr/molokai'
 colorscheme molokai
 
 set nobackup
-set directory=~/swp
+set directory=~/.vim/swp
 set textwidth=0
 set ruler
 set viminfo='100,<10000,s1000,\"1000
