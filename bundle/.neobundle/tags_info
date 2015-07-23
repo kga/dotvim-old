@@ -1,5 +1,6 @@
 Align
 jshint2.vim
+molokai
 neobundle.vim
 neocomplcache
 neomru.vim
