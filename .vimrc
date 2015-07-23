@@ -49,6 +49,9 @@ NeoBundle 'mxw/vim-jsx'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'derekwyatt/vim-scala'
 
+NeoBundle 'tomasr/molokai'
+colorscheme molokai
+
 call neobundle#end()
 
 " Required:
@@ -66,8 +69,6 @@ filetype plugin indent on
 filetype indent on
 syntax on
 
-NeoBundle 'tomasr/molokai'
-colorscheme molokai
 
 set nobackup
 set directory=~/.vim/swp
