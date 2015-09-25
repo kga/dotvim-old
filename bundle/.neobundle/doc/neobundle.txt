@@ -58,6 +58,7 @@ good for plugin power users (for example, 50+ plugins and over 1000 lines
 
 Neobundle features:
  * Uses |vimproc| if available
+ * Uses neovim async jobs feature if available
  * |unite.vim| interface
  * Revision lock
  * Supports svn/Mercurial repositories besides Git
@@ -252,6 +253,14 @@ neobundle#load_toml({filename}, [{options}])
 		unite_sources = [ 'neosnippet',
 		  'neosnippet/user', 'neosnippet/runtime']
 
+		  [[plugins.depends]]
+		  repository = 'honza/vim-snippet'
+		  name = 'honza-snippet'
+
+		[[plugins]]
+		repository = 'Shougo/neobundle.vim'
+		fetch = 1
+
 		[[plugins]]
 		repository = 'Shougo/vimproc.vim'
 
@@ -390,8 +399,12 @@ COMMANDS 					*neobundle-commands*
 :NeoBundleInstall [{name}...]			*:NeoBundleInstall*
 		Installs plugins specified by {name}. {name} is
 		fuzzy-searched.  If {name} is omitted, all configured plugins
-		are installed.  Note: {name}s are plugin names like
-		"neobundle.vim", not "Shougo/neobundle.vim".
+		are installed.
+		Note: {name}s are plugin names like "neobundle.vim", not
+		"Shougo/neobundle.vim".
+		Note: neobundle cannot use neovim async jobs feature in the
+		command.  If you want to use the feature, you should use unite
+		interface instead.
 
 :NeoBundleInstall! [{name}...]			*:NeoBundleInstall!*
 		Same as |:NeoBundleUpdate|.
@@ -403,6 +416,9 @@ COMMANDS 					*neobundle-commands*
 		the "stay_same" option set.
 		Note: {name}s are plugin names like "neobundle.vim", not
 		"Shougo/neobundle.vim".
+		Note: neobundle cannot use neovim async jobs feature in the
+		command.  If you want to use the feature, you should use unite
+		interface instead.
 
 :NeoBundleUpdate! [{name}...]			*:NeoBundleUpdate!*
 		Same as |:NeoBundleUpdate|, except that it disregards the
@@ -964,6 +980,11 @@ OPTIONS 					*neobundle-options*
 		If set to 1, neobundle doesn't add the path to user
 		runtimepath.
 
+						*neobundle-options-fetch*
+		fetch			(Number)
+		If set to 1, neobundle doesn't add the path to user
+		runtimepath, and doesn't load the bundle.
+
 						*neobundle-options-force*
 		force			(Number)
 		If set to 1, neobundle will load plugin files in the plugin
@@ -1140,15 +1161,6 @@ OPTIONS 					*neobundle-options*
 			endif
 <
 			plugin-B is loaded before plugin-A is loaded.
-
-			function_prefix	(String)
-			Autoload function prefix in functions.
-			{function_prefix}#...
-			If the prefix is set, functions were loaded
-			automatically.
-			If omitted it, automatically generated prefix is used.
-			Example: If you use "unite.vim", "unite" function
-			prefix is used.
 
 			command_prefix	(String)
 			Autoload command prefix in commands.
@@ -1422,9 +1434,10 @@ neobundle
 				*neobundle-unite-source-neobundle-install*
 neobundle/install
 		Install configured plugins asynchronously.
+		It supports neovim async jobs feature.
 
-		Note: To install |vimproc| plugin is recommended.
-		http://github.com/Shougo/vimproc.vim
+		Note: Installing the |vimproc| plugin or using neovim is
+		recommended.
 
 		If argument is bang(!), it will install and update all plugins.
 
@@ -1450,8 +1463,10 @@ neobundle/log
 neobundle/update
 		Install and update configured plugins asynchronously, except
 		for outdated ones or those with the "stay_same" option.
+		It supports neovim async jobs feature.
 		Note: This source is the same as "neobundle/install:!".
-		Note: Installing the |vimproc| plugin is recommended.
+		Note: Installing the |vimproc| plugin or using neovim is
+		recommended.
 
 		If argument is bang(!), it will not be with fuzzy search.
 		If argument is "all", it will update all plugins.

@@ -30,6 +30,8 @@ NeoBundle 'Shougo/vimproc.vim', {
       \    },
       \ }
 NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'vim-perl/vim-perl'
@@ -155,7 +157,7 @@ nnoremap <silent> <Space>/ :nohlsearch<CR>
 
 nnoremap <expr> 0 col('.') == 1 ? '^' : '0'
 
-let g:ref_perldoc_complete_head = 1
+let g:ref_perldoc_complete_head = 0
 
 nnoremap <silent> ,r :<C-u>QuickRun -runner vimproc<CR>
 let g:quickrun_config = {}
@@ -276,6 +278,16 @@ let g:unite_update_time = 80
 let g:unite_source_file_mru_limit = 5000
 
 call unite#custom#source('file_rec/async', 'ignore_pattern', '\%(png\|gif\|jpeg\|jpg\)$')
+" }}}
+
+" {{{ neosnippets
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+"let g:neosnippet#disable_runtime_snippets = {
+"\   '_' : 1,
+"\ }
+"let g:neosnippet#snippets_directory='~/.vim/snippets'
 " }}}
 
 let g:wildfire_fuel_map = "<ENTER>"

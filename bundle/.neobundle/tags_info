@@ -4,6 +4,8 @@ molokai
 neobundle.vim
 neocomplcache
 neomru.vim
+neosnippet
+neosnippet-snippets
 sudo.vim
 typescript-vim
 unite-ghq
