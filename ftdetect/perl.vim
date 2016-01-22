@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead cpanfile,*.psgi setfiletype perl
+autocmd BufNewFile,BufRead cpanfile,*.psgi,*/t/*.t setfiletype perl
