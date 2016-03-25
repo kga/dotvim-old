@@ -2,15 +2,15 @@ Align
 jshint2.vim
 molokai
 neobundle.vim
-neocomplcache
+neocomplete
 neomru.vim
 neosnippet
 neosnippet-snippets
 sudo.vim
+swift.vim
 typescript-vim
 unite-ghq
 unite.vim
-vim-coffee-script
 vim-fugitive
 vim-go
 vim-jsx

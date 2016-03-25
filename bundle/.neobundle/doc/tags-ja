@@ -106,6 +106,7 @@ quickrun-module-outputter/buffer	quickrun.jax	/*quickrun-module-outputter\/buffe
 quickrun-module-outputter/buffered	quickrun.jax	/*quickrun-module-outputter\/buffered*
 quickrun-module-outputter/error	quickrun.jax	/*quickrun-module-outputter\/error*
 quickrun-module-outputter/file	quickrun.jax	/*quickrun-module-outputter\/file*
+quickrun-module-outputter/loclist	quickrun.jax	/*quickrun-module-outputter\/loclist*
 quickrun-module-outputter/message	quickrun.jax	/*quickrun-module-outputter\/message*
 quickrun-module-outputter/multi	quickrun.jax	/*quickrun-module-outputter\/multi*
 quickrun-module-outputter/null	quickrun.jax	/*quickrun-module-outputter\/null*
@@ -149,6 +150,7 @@ quickrun-register-module	quickrun.jax	/*quickrun-register-module*
 quickrun-runner-attributes	quickrun.jax	/*quickrun-runner-attributes*
 quickrun-runner.run()	quickrun.jax	/*quickrun-runner.run()*
 quickrun-session	quickrun.jax	/*quickrun-session*
+quickrun-session.config	quickrun.jax	/*quickrun-session.config*
 quickrun-session.continue()	quickrun.jax	/*quickrun-session.continue()*
 quickrun-session.exit_code	quickrun.jax	/*quickrun-session.exit_code*
 quickrun-session.finish()	quickrun.jax	/*quickrun-session.finish()*
