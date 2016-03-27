@@ -1,67 +1,43 @@
-" Note: Skip initialization for vim-tiny or vim-small.
-if !1 | finish | endif
+set nocompatible
+filetype off
 
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
+set runtimepath+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
+Plugin 'VundleVim/Vundle.vim'
 
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/neomru.vim'
+Plugin 'Shougo/vimproc.vim'
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+Plugin 'Shougo/neocomplete'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'thinca/vim-quickrun'
+Plugin 'thinca/vim-ref'
+Plugin 'vim-perl/vim-perl'
+Plugin 'motemen/xslate-vim'
+Plugin 'groenewege/vim-less'
 
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
+Plugin 'Align'
+Plugin 'sudo.vim'
+Plugin 'sorah/unite-ghq'
+Plugin 'tpope/vim-fugitive'
 
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/vimproc.vim', {
-      \ 'build' : {
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'vim-perl/vim-perl'
-NeoBundle 'motemen/xslate-vim'
-NeoBundle 'groenewege/vim-less'
+Plugin 'Shutnik/jshint2.vim'
 
-NeoBundle 'Align'
-NeoBundle 'sudo.vim'
-NeoBundle 'sorah/unite-ghq'
-NeoBundle 'tpope/vim-fugitive'
+Plugin 'fatih/vim-go'
+Plugin 'mxw/vim-jsx'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'derekwyatt/vim-scala'
 
-NeoBundle 'Shutnik/jshint2.vim'
-
-NeoBundle 'fatih/vim-go'
-NeoBundle 'mxw/vim-jsx'
-NeoBundle 'leafgarland/typescript-vim'
-NeoBundle 'derekwyatt/vim-scala'
-
-NeoBundle 'tomasr/molokai'
-NeoBundle 'keith/swift.vim'
+Plugin 'tomasr/molokai'
+Plugin 'keith/swift.vim'
 colorscheme molokai
 
-call neobundle#end()
+call vundle#end()
 
-" Required:
 filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
 
 let jshint2_save = 1
 
