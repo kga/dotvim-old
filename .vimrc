@@ -10,6 +10,8 @@ Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/neomru.vim'
 Plugin 'Shougo/vimproc.vim'
 
+Plugin 'Shougo/unite-outline'
+
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
@@ -33,7 +35,11 @@ Plugin 'derekwyatt/vim-scala'
 
 Plugin 'tomasr/molokai'
 Plugin 'keith/swift.vim'
-colorscheme molokai
+colorscheme xoria256
+
+let g:loaded_matchparen = 1
+Plugin 'itchyny/vim-parenmatch'
+Plugin 'itchyny/vim-cursorword'
 
 call vundle#end()
 
@@ -93,7 +99,9 @@ set hidden
 "set autoread
 "set whichwrap=b,s,h,l,<,>,[,]
 
-let loaded_matchparen = 1
+"let loaded_matchparen = 1
+
+set completeopt=menuone
 
 let &statusline = ''
 let &statusline .= '%<[%n]%y%h%m%r%w %F'
@@ -222,6 +230,7 @@ nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
 nnoremap <silent> [unite]p :<C-u>Unite ref/perldoc<CR>
 nnoremap <silent> [unite]e :<C-u>call DispatchUniteFileRecAsyncOrGit()<CR>
 nnoremap <silent> [unite]g :<C-u>Unite ghq<CR>
+nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
 
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()"{{{
